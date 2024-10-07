@@ -1,0 +1,21 @@
+***** gnode B and receiver
+cd catkin_ws/
+rosclean purge
+source devel/setup.bash
+roslaunch robot_arm_moveit_config full_robot_arm_sim.launch
+now go back to the current folder : cd Documents/run
+giving permission for execution: chmod +x node_set_predefined_pose_v4.py
+python3 node_set_predefined_pose_v4.py
+
+***** in the receiver side:
+cd Documents/run
+chmod +x sender_v2.py
+python3 sender_v2.py --new_text "straight_up"
+python3 sender_v2.py --new_text "zero_state"
+python3 sender_v2.py --new_text "pick_object_pose"
+python3 sender_v2.py --new_text "opposite_pose"
+python3 sender_v2.py --new_text "place_object_pose"
+python3 sender_v2.py --new_text "lift_object_pose"
+
+***** set up joystick in case it is not set up
+python3 joystick.py
